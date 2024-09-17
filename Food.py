@@ -15,10 +15,10 @@ class Food():
         self.screen=screen
         self.curXPos=None
         self.curYPos=None
+        self.reset()
     def draw(self)->None:
-
-        self.curXPos=random.randint(self.Xbound1,self.Xbound2)
-        self.curYPos=random.randint(self.Ybound1,self.Ybound2)
-        self.shape.center=(self.curXPos,self.curYPos)
         pygame.draw.rect(self.screen,BLUE,self.shape)
-        pygame.display.flip()
+    def reset(self):
+        self.curXPos = random.randint(self.Xbound1, self.Xbound2)
+        self.curYPos = random.randint(self.Ybound1, self.Ybound2)
+        self.shape.center = (self.curXPos, self.curYPos)
